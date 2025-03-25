@@ -1,0 +1,35 @@
+warning: in the working copy of 'src/main/java/br/com/petz/cliente_pet/ClientePetApplication.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main/resources/application.yml', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/src/main/java/br/com/petz/cliente_pet/ClientePetApplication.java b/src/main/java/br/com/petz/cliente_pet/ClientePetApplication.java[m
+[1mindex 1224a86..9cb9c29 100644[m
+[1m--- a/src/main/java/br/com/petz/cliente_pet/ClientePetApplication.java[m
+[1m+++ b/src/main/java/br/com/petz/cliente_pet/ClientePetApplication.java[m
+[36m@@ -2,9 +2,19 @@[m [mpackage br.com.petz.cliente_pet;[m
+ [m
+ import org.springframework.boot.SpringApplication;[m
+ import org.springframework.boot.autoconfigure.SpringBootApplication;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.GetMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RequestMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RestController;[m
+ [m
+ @SpringBootApplication[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequestMapping ("/")[m
+ public class ClientePetApplication {[m
+[32m+[m[41m	[m
+[32m+[m	[32m@GetMapping[m
+[32m+[m	[32mpublic String getHomeTeste() {[m
+[32m+[m		[32mreturn "Cliente Pet - API Home";[m
+[32m+[m	[32m}[m
+ [m
+ 	public static void main(String[] args) {[m
+ 		SpringApplication.run(ClientePetApplication.class, args);[m
+[1mdiff --git a/src/main/resources/application.yml b/src/main/resources/application.yml[m
+[1mindex fafa956..ba8e4e9 100644[m
+[1m--- a/src/main/resources/application.yml[m
+[1m+++ b/src/main/resources/application.yml[m
+[36m@@ -1 +1,3 @@[m
+[31m-spring.application.name=cliente-pet[m
+[32m+[m[32mserver:[m
+[32m+[m[32m servlet:[m
+[32m+[m[32m    context-path: /cliente-pet/api[m
