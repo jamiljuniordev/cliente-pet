@@ -1,13 +1,18 @@
 package br.com.petz.cliente_pet.cliente.domain;
-import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDate;
-import jakarta.validation.constraints.NotNull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
 import java.time.LocalDateTime;
 import java.util.UUID;
+
 import org.hibernate.validator.constraints.br.CPF;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +22,9 @@ import lombok.NoArgsConstructor;
 @Getter
 public class Cliente {
 	@Id
-    @jakarta.validation.constraints.NotBlank
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", updatable = false, unique = true, nullable = false)
+    @NotBlank
     private String nomeCompleto;
     @NotNull
     @Email
@@ -39,7 +46,6 @@ public class Cliente {
                   @NotBlank String celular, String telefone, Sexo sexo, 
                   @NotNull LocalDate dataNascimento, @CPF String cpf, 
                   @NotNull Boolean aceitaTermos) {
-        this.idCliente = UUID.randomUUID();
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.celular = celular;
