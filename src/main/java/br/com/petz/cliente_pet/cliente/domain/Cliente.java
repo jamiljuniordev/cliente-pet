@@ -1,4 +1,5 @@
 package br.com.petz.cliente_pet.cliente.domain;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -24,36 +25,35 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, unique = true, nullable = false)
-    @NotBlank
-    private String nomeCompleto;
-    @NotNull
-    @Email
-    private String email;
-    @NotNull
-    private String celular;
-    private String telefone;
-    private Sexo sexo;
-    @NotNull
-    private LocalDate dataNascimento;
-    private String cpf;
-    @NotNull
-    private Boolean aceitaTermos;
-    private LocalDateTime dataHoraDoCadastro;
-    private LocalDateTime dataHoraDaUltimaAlteracao;
-    private UUID idCliente;
+	@NotBlank
+	private String nomeCompleto;
+	@NotNull
+	@Email
+	private String email;
+	@NotNull
+	private String celular;
+	private String telefone;
+	private Sexo sexo;
+	@NotNull
+	private LocalDate dataNascimento;
+	private String cpf;
+	@NotNull
+	private Boolean aceitaTermos;
+	private LocalDateTime dataHoraDoCadastro;
+	private LocalDateTime dataHoraDaUltimaAlteracao;
+	private UUID idCliente;
 
-    public Cliente(@NotBlank String nomeCompleto, @NotBlank @Email String email, 
-                  @NotBlank String celular, String telefone, Sexo sexo, 
-                  @NotNull LocalDate dataNascimento, @CPF String cpf, 
-                  @NotNull Boolean aceitaTermos) {
-        this.nomeCompleto = nomeCompleto;
-        this.email = email;
-        this.celular = celular;
-        this.telefone = telefone;
-        this.sexo = sexo;
-        this.dataNascimento = dataNascimento;
-        this.cpf = cpf;
-        this.aceitaTermos = aceitaTermos;
-        this.dataHoraDoCadastro = LocalDateTime.now();
-    }
+	public Cliente(@NotBlank String nomeCompleto, @NotBlank @Email String email, @NotBlank String celular,
+			String telefone, Sexo sexo, @NotNull LocalDate dataNascimento, @CPF String cpf,
+			@NotNull Boolean aceitaTermos) {
+		this.nomeCompleto = nomeCompleto;
+		this.email = email;
+		this.celular = celular;
+		this.telefone = telefone;
+		this.sexo = sexo;
+		this.dataNascimento = dataNascimento;
+		this.cpf = cpf;
+		this.aceitaTermos = aceitaTermos;
+		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
 }
