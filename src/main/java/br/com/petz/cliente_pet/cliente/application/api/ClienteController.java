@@ -26,6 +26,11 @@ public class ClienteController {
         return clienteCriado;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     public List<ClienteListResponse> getTodosClientes() {
         log.info("[inicia] ClienteController - getTodosClientes");
         List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
