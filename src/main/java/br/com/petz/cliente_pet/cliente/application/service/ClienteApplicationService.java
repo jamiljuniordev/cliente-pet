@@ -1,5 +1,6 @@
 package br.com.petz.cliente_pet.cliente.application.service;
 
+import br.com.petz.cliente_pet.cliente.application.api.ClienteListResponse;
 import org.springframework.stereotype.Service;
 
 import br.com.petz.cliente_pet.cliente.application.api.ClienteRequest;
@@ -8,6 +9,8 @@ import br.com.petz.cliente_pet.cliente.application.repository.ClienteRepository;
 import br.com.petz.cliente_pet.cliente.domain.Cliente;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
+import java.util.List;
 
 @Service
 @Log4j2
@@ -25,5 +28,12 @@ public class ClienteApplicationService implements ClienteService {
 				// .nome(cliente.getNome())  // descomente e adicione outros campos
 				// .email(cliente.getEmail())
 				.build();
+	}
+
+	@Override
+	public List<ClienteListResponse> buscaTodosClientes() {
+		log.info("[inicia] ClienteApplicationService - buscaTodosClientes");
+		log.info("[finaliza] ClienteApplicationService - buscaTodosClientes");
+		return List.of();
 	}
 }

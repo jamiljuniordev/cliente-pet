@@ -28,7 +28,9 @@ public class ClienteController {
 
     public List<ClienteListResponse> getTodosClientes() {
         log.info("[inicia] ClienteController - getTodosClientes");
+        List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
         log.info("[foinaliza] ClienteController - getTodosClientes");
-        return null;
+
+        return clientes;
     }
 }
