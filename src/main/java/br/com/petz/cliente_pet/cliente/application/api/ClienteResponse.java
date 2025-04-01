@@ -1,12 +1,14 @@
 package br.com.petz.cliente_pet.cliente.application.api;
 
-import java.util.UUID;
-
 import lombok.Builder;
 import lombok.Value;
 
 @Value
 @Builder
 public class ClienteResponse {
-	private UUID idCliente;
+    private String idCliente;
+    // Adicione outros campos que deseja retornar
+    // private String nome;
+    // private String email;
+    // etc.
 }
