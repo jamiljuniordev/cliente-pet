@@ -1,5 +1,6 @@
 package br.com.petz.cliente_pet.cliente.application.api;
 
+import org.hibernate.validator.constraints.UUID;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ import lombok.extern.log4j.Log4j2;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/cliente") // Adiciona o path base para todos os endpoints
+@RequestMapping("/v1/cliente")
 @Log4j2
 @RequiredArgsConstructor
 public class ClienteController {
@@ -34,8 +35,15 @@ public class ClienteController {
     public List<ClienteListResponse> getTodosClientes() {
         log.info("[inicia] ClienteController - getTodosClientes");
         List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
-        log.info("[foinaliza] ClienteController - getTodosClientes");
-
+        log.info("[finaliza] ClienteController - getTodosClientes");
         return clientes;
     }
+
+    public ClientedetalhadoResponse getClienteAtravesId(UUID idCliente) {
+        log.info("[inicia] ClienteController - getClienteAtravesId");
+        log.info("[idCliente] {}", idCliente);
+        log.info("[finaliza] ClienteController - getClienteAtravesId");
+        return null;
+    }
 }
+
