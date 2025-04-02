@@ -21,42 +21,50 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 public class Cliente {
-    public String getIdCliente;
-    @Id
+	public String getIdCliente;
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, unique = true, nullable = false)
+	private UUID idCliente;  // Tipo corrigido para UUID
+
 	@NotBlank
 	private String nomeCompleto;
+
 	@NotNull
 	@Email
 	private String email;
+
 	@NotNull
 	private String celular;
+
 	private String telefone;
-	private @NotNull String sexo;
+
+	@NotNull
+	private String sexo;
+
 	@NotNull
 	private LocalDate dataNascimento;
+
 	private String cpf;
+
 	@NotNull
 	private Boolean aceitaTermos;
+
 	private LocalDateTime dataHoraDoCadastro;
+
 	private LocalDateTime dataHoraDaUltimaAlteracao;
-	private UUID idCliente;
 
 	public Cliente(ClienteRequest clienteRequest) {
 		this.nomeCompleto = clienteRequest.getNomeCompleto();
 		this.email = clienteRequest.getEmail();
-		this.celular  = clienteRequest.getCelular();
+		this.celular = clienteRequest.getCelular();
 		this.telefone = clienteRequest.getTelefone();
-		this.sexo = clienteRequest.getSexo();
+		this.sexo = clienteRequest.getSexo().toString(); // Garante o formato correto para enum
 		this.dataNascimento = clienteRequest.getDataNascimento();
-		this.cpf = clienteRequest.getCpf;
+		this.cpf = clienteRequest.getCpf(); // Corrigido: método invocado corretamente
 		this.aceitaTermos = clienteRequest.getAceitaTermos();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 
-	public UUID getIdCliente() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	// Método getIdCliente() removido pois o @Getter do Lombok já gera isso
 }

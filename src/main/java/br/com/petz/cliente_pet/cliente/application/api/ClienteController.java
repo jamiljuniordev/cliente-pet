@@ -17,7 +17,7 @@ import java.util.List;
 @Log4j2
 @RequiredArgsConstructor
 public class ClienteController {
-    private final ClienteService clienteService = null;
+    private final ClienteService clienteService;
 
     @PostMapping
     public ClienteResponse postCliente(@RequestBody ClienteRequest clienteRequest) {
@@ -42,8 +42,9 @@ public class ClienteController {
     public ClientedetalhadoResponse getClienteAtravesId(UUID idCliente) {
         log.info("[inicia] ClienteController - getClienteAtravesId");
         log.info("[idCliente] {}", idCliente);
+        ClientedetalhadoResponse clienteDetalhado = clienteService.buscaClienteAtravesId(idCliente);
         log.info("[finaliza] ClienteController - getClienteAtravesId");
-        return null;
+        return clienteDetalhadoado;
     }
 }
 
