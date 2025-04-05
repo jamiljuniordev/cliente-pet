@@ -6,7 +6,7 @@ import br.com.petz.cliente_pet.cliente.application.api.ClienteResponse; // Impor
 import br.com.petz.cliente_pet.cliente.application.api.ClientedetalhadoResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.hibernate.validator.constraints.UUID;
+import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

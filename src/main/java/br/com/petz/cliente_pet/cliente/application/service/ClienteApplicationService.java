@@ -2,7 +2,7 @@ package br.com.petz.cliente_pet.cliente.application.service;
 
 import br.com.petz.cliente_pet.cliente.application.api.ClienteListResponse;
 import br.com.petz.cliente_pet.cliente.application.api.ClientedetalhadoResponse;
-import org.hibernate.validator.constraints.UUID;
+import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import br.com.petz.cliente_pet.cliente.application.api.ClienteRequest;
